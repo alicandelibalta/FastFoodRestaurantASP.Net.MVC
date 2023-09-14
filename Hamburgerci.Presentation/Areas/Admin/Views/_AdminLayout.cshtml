@@ -1,0 +1,114 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html lang="en"
+      class="light-style layout-menu-fixed"
+      dir="ltr"
+      data-theme="theme-default"
+      data-assets-path="../assets/"
+      data-template="vertical-menu-template-free">
+@await Html.PartialAsync("~/Areas/Admin/Views/AdminPartial/_HeaderPartial.cshtml")
+
+<body>
+    <div class="layout-wrapper layout-content-navbar">
+        <div class="layout-container">
+
+            <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
+                @await Html.PartialAsync("~/Areas/Admin/Views/AdminPartial/_AppBrandDemoPartial.cshtml")
+
+                <div class="menu-inner-shadow"></div>
+
+                @await Html.PartialAsync("~/Areas/Admin/Views/AdminPartial/_SidebarPartial.cshtml")
+            </aside>
+
+            <div class="layout-page">
+
+                @await Html.PartialAsync("~/Areas/Admin/Views/AdminPartial/_NavbarPartial.cshtml")
+
+                <div class="content-wrapper">
+
+                    <div class="container-xxl flex-grow-1 container-p-y">
+
+                        @RenderBody()
+
+                    </div>
+
+                    @await Html.PartialAsync("~/Areas/Admin/Views/AdminPartial/_FooterPartial.cshtml")
+
+                    <div class="content-backdrop fade"></div>
+                </div>
+            </div>
+        </div>
+        <div class="layout-overlay layout-menu-toggle"></div>
+    </div>
+
+    @await Html.PartialAsync("~/Areas/Admin/Views/AdminPartial/_ScriptPartial.cshtml")
+</body>
+</html>
+
+
+
+
+
+
+@*
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>_AdminLayout</title>
+</head>
+<body>
+    <aside>
+
+
+        <ul class="menu-inner py-1">
+            <!-- Dashboard -->
+            <li class="menu-item">
+                <a href="index.html" class="menu-link">
+                    <i class="menu-icon tf-icons bx bx-home-circle"></i>
+                    <div data-i18n="Analytics">Profile</div>
+                </a>
+            </li>
+
+            <li class="menu-item">
+                <a href="index.html" class="menu-link">
+                    <i class="menu-icon tf-icons bx bx-comment"></i>
+                    <div data-i18n="Analytics">Add Category</div>
+                </a>
+            </li>
+
+            <li class="menu-item">
+                <a href="index.html" class="menu-link">
+                    <i class="menu-icon tf-icons bx bxs-plane-alt"></i>
+                    <div data-i18n="Analytics">List Menu</div>
+                </a>
+            </li>
+
+            <li class="menu-item">
+                <a href="index.html" class="menu-link">
+                    <i class="menu-icon tf-icons bx bxs-face"></i>
+                    <div data-i18n="Analytics">List Category</div>
+                </a>
+            </li>
+
+        </ul>
+    </aside>
+
+    <div>
+        <div>
+            @RenderBody()
+        </div>
+    </div>
+</body>
+</html>
+
+*@

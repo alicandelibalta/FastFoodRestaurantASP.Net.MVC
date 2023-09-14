@@ -1,0 +1,32 @@
+﻿@using Hamburgerci.EntityLayer
+@model List<AppUser>
+@{
+    ViewData["Title"] = "AddCategory";
+    Layout = "~/Areas/Admin/Views/_AdminLayout.cshtml";
+}
+
+<h1>Admin Profile</h1>
+
+
+<h3>Users List</h3>
+<table>
+    <tr>
+        <th>UserId</th>
+        <th>UserName</th>
+        <th>Name</th>
+        <th>Surname</th>
+        <th>Email</th>
+        <!-- Diğer özelliklerin başlıklarını buraya ekleyin -->
+    </tr>
+    @foreach (var user in Model)
+    {
+        <tr>
+            <td>@user.Id</td>
+            <td>@user.UserName</td>
+            <td>@user.Name</td>
+            <td>@user.Surname</td>
+            <td>@user.Email</td>
+            <!-- Diğer özelliklerin değerlerini buraya ekleyin -->
+        </tr>
+    }
+</table>

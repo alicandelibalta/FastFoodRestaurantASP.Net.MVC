@@ -1,0 +1,32 @@
+﻿@using Hamburgerci.EntityLayer
+@model Fry
+@{
+    ViewData["Title"] = "AddFry";
+    Layout = "~/Areas/Admin/Views/_AdminLayout.cshtml";
+}
+
+<h1>AddFry</h1>
+
+<form method="post">
+    <div class="form-group">
+        @Html.Label(" Name")
+        <input type="text" asp-for="Name" class="form-control" />
+    </div>
+    <br />
+    <div class="form-group">
+        @Html.Label("Price")
+        <input type="text" asp-for="Price" class="form-control" />
+    </div>
+    <br />
+    <div class="form-group">
+        @Html.Label("Description")
+        <input type="text" asp-for="Description" class="form-control" />
+    </div>
+    <br />
+    <div class="form-group">
+        @Html.Label("Image")
+        <input type="text" asp-for="Image" class="form-control" />
+    </div>
+    <br />
+    <button class="btn btn-outline-primary">Add a Fry</button>
+</form>

@@ -1,0 +1,54 @@
+﻿@using Hamburgerci.Presentation.Areas.Admin.Models
+@model ProductViewModel
+@{
+    ViewData["Title"] = "AddProduct";
+    Layout = "~/Areas/Admin/Views/_AdminLayout.cshtml";
+    
+}
+
+<h1>AddProduct</h1>
+
+
+<form method="post" asp-action="AddProduct" asp-controller="Product">
+    <div class="form-group">
+        @Html.LabelFor(model => model.CategoryID, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+        @Html.DropDownListFor(model => model.CategoryID, new List<SelectListItem>{
+            new SelectListItem { Text = "Burger", Value = "1", Selected = true},
+            new SelectListItem { Text = "Fry", Value = "2"},
+            new SelectListItem { Text = "Beverage", Value = "3"},
+            new SelectListItem { Text = "Sauce", Value = "4"},
+        }, new {@class = "form-control"})
+
+        @*<select name="catID" asp-for="CategoryID">
+            <option value =""> Select Category</option>
+            <option value ="1">Burger</option>
+            <option value ="2">Fry</option>
+            <option value ="3">Beverage</option>
+            <option value ="4">Sauce</option>
+        </select> *@
+
+        @*<input type="text" asp-for="Name" class="form-control" />*@
+    </div>
+    <div class="form-group">
+        @Html.Label(" Name")
+        <input type="text" asp-for="Name" class="form-control" />
+    </div>
+    <br />
+    <div class="form-group">
+        @Html.Label("Price")
+        <input type="text" asp-for="Price" class="form-control" />
+    </div>
+    <br />
+    <div class="form-group">
+        @Html.Label("Description")
+        <input type="text" asp-for="Description" class="form-control" />
+    </div>
+    <br />
+    <div class="form-group">
+        @Html.Label("Image")
+        <input type="text" asp-for="Image" class="form-control" />
+    </div>
+    <br />
+    <button type="submit" class="btn btn-outline-primary">Add a Product</button>
+</form>
